@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Study Sidebar Notes</title>
+  <link rel="stylesheet" href="sidebar.css">
+</head>
+<body>
+  <div class="sidebar-container">
+    <div class="sidebar-header">
+      <h2 class="sidebar-title">Study Notes</h2>
+      <div class="header-actions">
+        <button class="theme-toggle" id="themeToggle" title="Toggle theme">
+          <svg class="theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+          </svg>
+        </button>
+        <button class="minimize-btn" id="minimizeBtn" title="Minimize">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 12H6"/>
+          </svg>
+        </button>
+        <button class="close-btn" id="closeBtn" title="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 6L6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+    
+    <!-- <div class="domain-indicator" id="domainIndicator">
+      <span class="domain-text">Loading...</span>
+    </div> -->
+    
+    <div class="tab-container">
+      <button class="tab-btn active" data-tab="notes">Notes</button>
+      <button class="tab-btn" data-tab="drawing">Drawing</button>
+    </div>
+    
+    <div class="tab-content active" id="notesTab">
+      <textarea 
+        class="notes-textarea" 
+        id="notesTextarea" 
+        placeholder="Take your notes here... (Auto-saved)"
+      ></textarea>
+      <div class="notes-actions">
+        <button class="download-btn" id="downloadNotesBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3M4 14l4-4 3 3 4-4 3 3"/>
+          </svg>
+          Download Notes
+        </button>
+      </div>
+    </div>
+    
+    <div class="tab-content" id="drawingTab">
+      <div class="drawing-controls">
+        <div class="control-group">
+          <label>Color</label>
+          <input type="color" id="colorPicker" value="#667eea">
+        </div>
+        <div class="control-group">
+          <label>Size</label>
+          <input type="range" id="brushSize" min="1" max="20" value="5">
+          <span class="size-value" id="sizeValue">5px</span>
+        </div>
+        <div class="control-group">
+          <label>Tools</label>
+          <div class="tool-buttons">
+            <button class="tool-btn active" id="penTool" title="Pen">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
+              </svg>
+            </button>
+            <button class="tool-btn" id="eraserTool" title="Eraser">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M18 13v3h-3M9 5H6a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1v-3M8 16l8-8M16 8l-8 8"/>
+              </svg>
+            </button>
+            <button class="tool-btn" id="clearCanvas" title="Clear">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="canvas-container">
+        <canvas id="drawingCanvas" width="300" height="400"></canvas>
+      </div>
+      
+      <div class="drawing-actions">
+        <button class="download-btn" id="downloadDrawingBtn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 10v6m0 0l-3-3m3 3l3-3M3 17v3a1 1 0 001 1h16a1 1 0 001-1v-3M4 14l4-4 3 3 4-4 3 3"/>
+          </svg>
+          Export Drawing
+        </button>
+      </div>
+    </div>
+  </div>
+  
+  <script src="sidebar.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
